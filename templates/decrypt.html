@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <title>Decrypt Message</title>
+</head>
+<body>
+    <h1>Decrypt Message</h1>
+    <form method="POST">
+        <label for="private_key">Private Key:</label>
+        <textarea id="private_key" name="private_key" required></textarea><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+        <label for="salt">Salt:</label>
+        <input type="text" id="salt" name="salt" required><br>
+        <label for="ciphertext">Ciphertext:</label>
+        <textarea id="ciphertext" name="ciphertext" required></textarea><br>
+        <button type="submit">Decrypt</button>
+    </form>
+    {% if success %}
+        <h2>Decrypted Message:</h2>
+        <pre>{{ plaintext }}</pre>
+    {% elif error %}
+        <h2>Error:</h2>
+        <pre>{{ error }}</pre>
+    {% endif %}
+    <br>
+    <a href="/">Back to Generate Keys</a>
+</body>
+</html>
